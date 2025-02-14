@@ -7,43 +7,103 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            color: #333;
         }
         .container {
-            width: 80%;
-            max-width: 800px;
+            width: 90%;
+            max-width: 900px;
             margin: 20px auto;
-            padding: 20px;
+            padding: 40px;
             background: white;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px gray;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
         h1 {
             color: #b76e79;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
         iframe {
             width: 100%;
             border: none;
             border-radius: 10px;
         }
+        .rsvp-form {
+            background-color: #ffecf2;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .cta-button {
+            background-color: #b76e79;
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .cta-button:hover {
+            background-color: #a05a66;
+        }
+        .guest-list-button {
+            background-color: #2c8c99;
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .guest-list-button:hover {
+            background-color: #257a7f;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>You're Invited to Our Wedding!</h1>
-        <p>Please RSVP by filling out the form below.</p>
+        <p>We would love for you to join us. Please RSVP by filling out the form below and let us know if you're able to attend!</p>
+
+        <!-- RSVP Form Section -->
+        <div class="rsvp-form">
+            <h2>Please RSVP</h2>
+            <p>Click the button below to fill out the RSVP form and confirm your attendance.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNhclZIU_wJkHOgRS7iJlPCJYF9iA-R2Qc1f4PmU_T5noOiQ/viewform" target="_blank" class="cta-button">RSVP Now</a>
+        </div>
 
         <!-- Google Form Embed -->
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdNhclZIU_wJkHOgRS7iJlPCJYF9iA-R2Qc1f4PmU_T5noOiQ/viewform?embedded=true" width="640" height="2317" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
-        <h2>Guest List</h2>
-        <p>View who has RSVP'd:</p>
-
-        <!-- Google Sheet Embed -->
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTVPGtNCSdFe7nyAW3VM6lskzEMRYTI6Wfmz_IMo84jN5OOnaSkT498adxzAdzs3KOM8pPd58vjCqvP/pubhtml?widget=true&amp;headers=false" height="500"></iframe>
+        <!-- Guest List Section -->
+        <div class="guest-list">
+            <h2>Guest List</h2>
+            <p>Click the button below to view the guest list!</p>
+            <a href="guest-list.html" class="guest-list-button">View Guest List</a>
+        </div>
     </div>
 </body>
 </html>
