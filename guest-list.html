@@ -48,18 +48,42 @@
         .back-button:hover {
             background-color: #a05a66;
         }
+        .error-message {
+            color: red;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="guest-list-container">
         <h1>Wedding Guest List</h1>
-        <p>Here's the list of guests who have RSVP'd for the wedding:</p>
+        <p>Please enter the password to view the guest list:</p>
+        
+        <script>
+            // The password to access the guest list
+            const password = "wedding123"; // Change this to your desired password
 
-        <!-- Google Sheet Embed -->
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTVPGtNCSdFe7nyAW3VM6lskzEMRYTI6Wfmz_IMo84jN5OOnaSkT498adxzAdzs3KOM8pPd58vjCqvP/pubhtml?widget=true&amp;headers=false"></iframe>
+            // Prompt user for password
+            const userPassword = prompt("Please enter the password to view the guest list:");
 
-        <!-- Button to go back to the main page -->
-        <a href="index.html" class="back-button">Back to RSVP</a>
+            // If the password is correct, show the guest list
+            if (userPassword === password) {
+                document.getElementById("guest-list-container").innerHTML = `
+                    <h1>Wedding Guest List</h1>
+                    <p>Here's the list of guests who have RSVP'd for the wedding:</p>
+                    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTVPGtNCSdFe7nyAW3VM6lskzEMRYTI6Wfmz_IMo84jN5OOnaSkT498adxzAdzs3KOM8pPd58vjCqvP/pubhtml?widget=true&amp;headers=false"></iframe>
+                    <a href="index.html" class="back-button">Back to RSVP</a>
+                `;
+            } else {
+                // If password is incorrect, show an error message
+                document.getElementById("guest-list-container").innerHTML = `
+                    <h1>Access Denied</h1>
+                    <p class="error-message">Incorrect password. Please try again.</p>
+                    <a href="index.html" class="back-button">Back to RSVP</a>
+                `;
+            }
+        </script>
     </div>
 </body>
 </html>
